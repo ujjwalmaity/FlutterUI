@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
+        child: Stack(
           children: <Widget>[
             Expanded(
               child: ListView(
@@ -99,17 +99,20 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              height: 70.0,
-              color: Colors.black12,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  NavIcon(icon: Icons.home),
-                  NavIcon(icon: Icons.add_circle),
-                  NavIcon(icon: Icons.favorite),
-                  NavIcon(icon: Icons.person),
-                ],
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                height: 60.0,
+                color: Colors.black45,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    NavIcon(icon: Icons.home, color: Colors.white),
+                    NavIcon(icon: Icons.add_circle),
+                    NavIcon(icon: Icons.favorite),
+                    NavIcon(icon: Icons.person),
+                  ],
+                ),
               ),
             ),
           ],
