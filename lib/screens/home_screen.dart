@@ -5,10 +5,13 @@ import 'package:FlutterUI/components/live_container.dart';
 import 'package:FlutterUI/components/nav_icon.dart';
 import 'package:FlutterUI/components/shows_container.dart';
 import 'package:FlutterUI/components/trending_container.dart';
+import 'package:FlutterUI/screens/details_screen.dart';
 import 'package:FlutterUI/utilities/constants.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
+  static const String id = 'home_screen';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,10 +42,15 @@ class HomeScreen extends StatelessWidget {
                         child: ListView(
                           scrollDirection: Axis.horizontal,
                           children: <Widget>[
-                            ShowsContainer(
-                              image: 'images/image1.jpg',
-                              title1: 'Singing Stars',
-                              title2: 'Season 1',
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.pushNamed(context, DetailsScreen.id);
+                              },
+                              child: ShowsContainer(
+                                image: 'images/image1.jpg',
+                                title1: 'Singing Stars',
+                                title2: 'Season 1',
+                              ),
                             ),
                             ShowsContainer(
                               image: 'images/image2.jpg',

@@ -1,3 +1,4 @@
+import 'package:FlutterUI/screens/details_screen.dart';
 import 'package:FlutterUI/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +10,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
-      home: HomeScreen(),
+      initialRoute: HomeScreen.id,
+      routes: {
+        HomeScreen.id: (context) => HomeScreen(),
+        DetailsScreen.id: (context) => DetailsScreen(),
+      },
     );
   }
 }
