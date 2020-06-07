@@ -1,3 +1,4 @@
+import 'package:FlutterUI/animations/FadeAnimation.dart';
 import 'package:FlutterUI/components/featured_container.dart';
 import 'package:FlutterUI/components/heading_text.dart';
 import 'package:FlutterUI/components/live_container.dart';
@@ -31,71 +32,75 @@ class HomeScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 30.0),
                   HeadingText(text: 'Shows for you'),
-                  Container(
-                    height: 280.0,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: <Widget>[
-                        ShowsContainer(
-                          image: 'images/image1.jpg',
-                          title1: 'Singing Stars',
-                          title2: 'Season 1',
+                  FadeAnimation(
+                      1,
+                      Container(
+                        height: 280.0,
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: <Widget>[
+                            ShowsContainer(
+                              image: 'images/image1.jpg',
+                              title1: 'Singing Stars',
+                              title2: 'Season 1',
+                            ),
+                            ShowsContainer(
+                              image: 'images/image2.jpg',
+                              title1: 'Rising Stars',
+                              title2: 'Season 2',
+                            ),
+                            ShowsContainer(
+                              image: 'images/image3.jpg',
+                              title1: 'Battle of Queens',
+                              title2: 'Season 3',
+                            ),
+                          ],
                         ),
-                        ShowsContainer(
-                          image: 'images/image2.jpg',
-                          title1: 'Rising Stars',
-                          title2: 'Season 2',
-                        ),
-                        ShowsContainer(
-                          image: 'images/image3.jpg',
-                          title1: 'Battle of Queens',
-                          title2: 'Season 3',
-                        ),
-                      ],
-                    ),
-                  ),
+                      )),
                   SizedBox(height: 30.0),
                   HeadingText(text: 'Trending right now'),
-                  Container(
-                    height: 160,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: <Widget>[
-                        TrendingContainer(
-                          image: 'images/image1.jpg',
-                          title: 'Hip-hop king',
+                  FadeAnimation(
+                      1,
+                      Container(
+                        height: 160,
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: <Widget>[
+                            TrendingContainer(
+                              image: 'images/image1.jpg',
+                              title: 'Hip-hop king',
+                            ),
+                            TrendingContainer(
+                              image: 'images/image2.jpg',
+                              title: 'Remix battle',
+                            ),
+                            TrendingContainer(
+                              image: 'images/image3.jpg',
+                              title: 'Top of the day',
+                            ),
+                            TrendingContainer(
+                              image: 'images/image1.jpg',
+                              title: 'Hip-hop king',
+                            ),
+                            TrendingContainer(
+                              image: 'images/image2.jpg',
+                              title: 'Remix battle',
+                            ),
+                            TrendingContainer(
+                              image: 'images/image3.jpg',
+                              title: 'Top of the day',
+                            ),
+                          ],
                         ),
-                        TrendingContainer(
-                          image: 'images/image2.jpg',
-                          title: 'Remix battle',
-                        ),
-                        TrendingContainer(
-                          image: 'images/image3.jpg',
-                          title: 'Top of the day',
-                        ),
-                        TrendingContainer(
-                          image: 'images/image1.jpg',
-                          title: 'Hip-hop king',
-                        ),
-                        TrendingContainer(
-                          image: 'images/image2.jpg',
-                          title: 'Remix battle',
-                        ),
-                        TrendingContainer(
-                          image: 'images/image3.jpg',
-                          title: 'Top of the day',
-                        ),
-                      ],
-                    ),
-                  ),
+                      )),
                   SizedBox(height: 30.0),
                   HeadingText(text: 'Live team battles'),
-                  LiveContainer(image: 'images/image2.jpg', title: 'Rising Stars S1'),
-                  LiveContainer(image: 'images/image4.jpg', title: 'Dance Heroes S8'),
+                  FadeAnimation(1, LiveContainer(image: 'images/image2.jpg', title: 'Rising Stars S1')),
+                  FadeAnimation(1, LiveContainer(image: 'images/image4.jpg', title: 'Dance Heroes S8')),
                   SizedBox(height: 30.0),
                   HeadingText(text: 'Featured performances'),
-                  FeaturedContainer(image1: 'images/image1.jpg', image2: 'images/image2.jpg'),
-                  FeaturedContainer(image1: 'images/image3.jpg', image2: 'images/image4.jpg'),
+                  FadeAnimation(1, FeaturedContainer(image1: 'images/image1.jpg', image2: 'images/image2.jpg')),
+                  FadeAnimation(1, FeaturedContainer(image1: 'images/image3.jpg', image2: 'images/image4.jpg')),
                 ],
               ),
             ),
